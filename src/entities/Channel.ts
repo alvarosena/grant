@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
+import short from 'short-uuid'
 import { User } from './User'
 import { Message } from './Message'
 
@@ -13,7 +14,7 @@ export class Channel {
 
   constructor() {
     if(!this._id && !this.created_at) {
-      this._id = uuidv4()
+      this._id = short.generate()
       this.created_at = new Date()
     }
   }
